@@ -1,0 +1,65 @@
+FoodExpress - Relazione d'esame
+Ingegneria del Software - Università degli Studi di Ferrara
+Anno Accademico 2025/2026
+
+========================================================
+REPOSITORY GITHUB (pubblici)
+========================================================
+Backend:  https://github.com/mahdi-allau/foodexpress-backend
+Frontend: https://github.com/mahdi-allau/foodexpress-frontend
+
+========================================================
+STRUMENTI DI PROJECT MANAGEMENT
+========================================================
+Trello (analisi requisiti e pianificazione):  https://trello.com/b/N9uHwykS/foodexpress-ingegneria-del-software
+Video demo (YouTube):                          https://youtu.be/QKPHGG-cNrc
+
+
+========================================================
+DESCRIZIONE DEL PROGETTO
+========================================================
+FoodExpress è una piattaforma di food delivery: l'utente sfoglia il menu,
+aggiunge piatti al carrello, effettua il checkout indicando l'indirizzo di
+consegna e riceve la stima di distanza/costo/tempo. A ogni ordine guadagna
+punti fedeltà, sale di livello e sblocca badge; una classifica premia i clienti
+più affezionati.
+
+  - Backend:  Spring Boot 3.3.5 (Java 17) con API REST + sicurezza JWT
+  - Frontend: Angular 18 (componenti standalone, lazy loading)
+  - Database: MySQL (schema "foodexpress")
+  - Integrazione REST esterna: Nominatim / OpenStreetMap (geocoding)
+
+========================================================
+FUNZIONALITÀ E STORY POINTS (pivot: CRUD = 2 SP, scala Fibonacci)
+========================================================
+MF1 - Catalogo & Gestione Menu
+  - DB piatto + categoria (1:N)                                2 SP
+  - BE CRUD piatti REST + filtro categoria                     3 SP
+  - FE menu + filtri + dettaglio                               3 SP
+MF2 - Carrello & Ordini (con geocoding esterno)
+  - DB carrello, voce_carrello, ordine, voce_ordine            3 SP
+  - BE carrello (aggiungi/rimuovi/svuota)                      3 SP
+  - BE checkout + integrazione REST geocoding (consegna)       5 SP
+  - FE carrello + checkout con stima consegna                  5 SP
+MF3 - Gamification
+  - DB badge + utente_badge (N:M)                              2 SP
+  - BE punti fedeltà + livelli + badge + classifica            5 SP
+  - FE badge + classifica + feedback ordine                    3 SP
+  ----------------------------------------------------------------
+  TOTALE                                                      ~34 SP
+
+Funzionalità di backend (>= 3): CRUD piatti, carrello, checkout+geocoding,
+gamification (punti/badge), classifica = 5+.
+
+========================================================
+ISTRUZIONI PER L'AVVIO (vedi README.md nella root)
+========================================================
+1. MySQL:  docker compose up -d   (oppure importa relazione_esame/foodexpress_dump.sql)
+2. Backend:  cd Backend-Spring && gradlew.bat bootRun   ->  http://localhost:8081
+3. Frontend: cd Frontend && npm install && npm start    ->  http://localhost:4300
+
+========================================================
+CREDENZIALI DI TEST
+========================================================
+Admin:  admin@foodexpress.it  / admin123
+Utente: user@foodexpress.it   / user123

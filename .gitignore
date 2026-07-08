@@ -1,0 +1,16 @@
+# Backend build
+Backend-Spring/.gradle/
+Backend-Spring/build/
+Backend-Spring/bin/
+
+# Il frontend è un repository separato
+/Frontend/
+
+# Immagini caricate a runtime (foto piatti/logo) - non sono codice sorgente
+Backend-Spring/immagini/
+immagini/
+
+*.log
+.idea/
+.vscode/
+*.iml

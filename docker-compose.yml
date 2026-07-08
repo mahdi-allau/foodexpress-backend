@@ -1,0 +1,14 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: foodexpress-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ecoquest123
+      MYSQL_DATABASE: foodexpress
+    ports:
+      - "3306:3306"
+    volumes:
+      - foodexpress-mysql-data:/var/lib/mysql
+
+volumes:
+  foodexpress-mysql-data:
